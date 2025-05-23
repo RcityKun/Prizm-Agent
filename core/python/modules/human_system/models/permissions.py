@@ -1,0 +1,3 @@
+"""
+Permissions model definition
+"""

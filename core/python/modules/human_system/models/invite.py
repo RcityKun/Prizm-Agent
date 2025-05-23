@@ -1,0 +1,3 @@
+"""
+Invitation system model definition
+"""
