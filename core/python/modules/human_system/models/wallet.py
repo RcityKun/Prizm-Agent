@@ -1,0 +1,3 @@
+"""
+Wallet model definition
+"""
