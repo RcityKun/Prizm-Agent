@@ -1,0 +1,8 @@
+surrealdb:
+  protocol: ws
+  host: localhost
+  port: 8000
+  namespace: prizm
+  database: agent
+  user: root
+  password: secret

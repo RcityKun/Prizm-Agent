@@ -1,0 +1,3 @@
+"""
+Permission service implementation
+"""

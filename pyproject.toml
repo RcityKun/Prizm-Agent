@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "prizm-agent"
+version = "0.1.0"
+description = "A modular, extensible AI agent framework"
+authors = ["Your Name <your.email@example.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.100.0"
+sqlalchemy = "^2.0.0"
+pydantic = "^2.0.0"
+python-dotenv = "^1.0.0"
+uvicorn = "^0.23.0"
+pyyaml = "^6.0"
+loguru = "^0.7.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+black = "^23.7.0"
+isort = "^5.12.0"
+mypy = "^1.4.0"
+flake8 = "^6.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3

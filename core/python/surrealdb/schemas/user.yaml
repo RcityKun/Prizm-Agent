@@ -1,0 +1,41 @@
+table: user
+fields:
+  - name: id
+    type: string
+    primary: true
+    required: true
+  - name: username
+    type: string
+    unique: true
+    required: true
+  - name: nickname
+    type: string
+  - name: gender
+    type: string
+  - name: age
+    type: int
+  - name: region
+    type: string
+  - name: phone
+    type: string
+  - name: signature
+    type: string
+  - name: race
+    type: string
+  - name: religion
+    type: string
+  - name: profession
+    type: string
+  - name: industry
+    type: string
+  - name: hobbies
+    type: array<string>
+  - name: qr_code
+    type: string
+  - name: status
+    type: string
+permissions:
+  select: public
+  create: internal
+  update: owner
+  delete: admin
