@@ -1,3 +1,0 @@
-"""
-Coupons model definition
-"""

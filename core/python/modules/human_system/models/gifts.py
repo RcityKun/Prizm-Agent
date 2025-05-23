@@ -1,3 +1,0 @@
-"""
-Gift system model definition
-"""
