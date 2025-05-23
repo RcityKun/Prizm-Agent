@@ -1,3 +1,0 @@
-"""
-Lucky cards model definition
-"""

@@ -1,3 +1,0 @@
-"""
-Points system model definition
-"""
