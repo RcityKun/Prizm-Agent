@@ -1,33 +1,26 @@
+# core/python/main.py
 import sys
 import os
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "core", "python")))
+
 from fastapi import FastAPI
 from modules.human_system.api.user_router import router as user_router
-from config.db_loader import load_db
 from modules.human_system.services.user_service import UserService
-# 文件：core/python/main.py 或 devtest/schema_apply_test.py
-
-from surrealdb.schema_loader import load_yaml_schemas, apply_schema_to_db
 from config.db_loader import load_db
 
-if __name__ == "__main__":
-    db = load_db()
-    schemas = load_yaml_schemas()
-    apply_schema_to_db(db, schemas)
-    print("✅ 所有 schema 已成功注入 SurrealDB！")
-
-
-
+# 创建 FastAPI 实例
 app = FastAPI()
 
-# 加载数据库实例
+# 初始化数据库
 db = load_db()
+print("✅ FastAPI 成功加载 SurrealDB")
 
-# 实例化服务并注入依赖（简化方式）
+# 手动注入服务依赖
 user_service = UserService(db=db)
-user_router.user_service = user_service  # 手动注入
+user_router.user_service = user_service  # 手动注入依赖
 
-# 挂载用户路由
+# 挂载路由
 app.include_router(user_router, prefix="/api")
 
 @app.get("/")
