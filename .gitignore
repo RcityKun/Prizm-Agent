@@ -1,4 +1,5 @@
 # Byte-compiled / optimized / DLL files
+.devtest
 __pycache__/
 *.py[cod]
 *$py.class
@@ -12,6 +13,7 @@ build/
 develop-eggs/
 dist/
 downloads/
+data/surreal.db/
 eggs/
 .eggs/
 lib/

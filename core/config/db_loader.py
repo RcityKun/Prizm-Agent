@@ -5,15 +5,16 @@ db_loader.py
 """
 
 import os
+from dotenv import load_dotenv
 from surrealdb.surreal_driver import SurrealDriver
-
+load_dotenv()
 def load_db():
     # 从环境变量中读取配置（也可改为从 config.yaml 加载）
-    endpoint = os.getenv("SURREALDB_ENDPOINT", "http://localhost:8000/rpc")
-    namespace = os.getenv("SURREALDB_NAMESPACE", "test_namespace")
-    database = os.getenv("SURREALDB_DATABASE", "test_db")
+    endpoint = os.getenv("SURREALDB_ENDPOINT", "http://localhost:8001")
+    namespace = os.getenv("SURREALDB_NAMESPACE", "prizm")
+    database = os.getenv("SURREALDB_DATABASE", "core")
     user = os.getenv("SURREALDB_USER", "root")
-    password = os.getenv("SURREALDB_PASSWORD", "root")
+    password = os.getenv("SURREALDB_PASSWORD", "secret")
 
     db = SurrealDriver(
         endpoint=endpoint,
@@ -23,3 +24,4 @@ def load_db():
         password=password
     )
     return db
+
